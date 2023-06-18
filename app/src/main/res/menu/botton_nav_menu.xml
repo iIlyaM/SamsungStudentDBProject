@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/groupsListFragment"
+        android:icon="@drawable/ic_group"
+        android:title="Группы" />
+    <item
+        android:id="@+id/studentListFragment"
+        android:icon="@drawable/ic_student_person_svgrepo_com"
+        android:title="Студенты" />
+</menu>

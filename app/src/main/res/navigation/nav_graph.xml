@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    android:label="Список студентов"
+    app:startDestination="@id/groupsListFragment">
+
+    <fragment
+        android:id="@+id/groupsListFragment"
+        android:name="vsu.cs.samsungstudentdb.screens.GroupsListFragment"
+        android:label="Список групп"
+        tools:layout="@layout/fragment_groups_list">
+        <action
+            android:id="@+id/action_groupsListFragment_to_editGroupFragment"
+            app:destination="@id/editGroupFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/studentListFragment"
+        android:name="vsu.cs.samsungstudentdb.screens.StudentListFragment"
+        android:label="Список студентов"
+        tools:layout="@layout/fragment_student_list">
+        <action
+            android:id="@+id/action_studentListFragment_to_createStudentFragment"
+            app:destination="@id/createStudentFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/createStudentFragment"
+        android:name="vsu.cs.samsungstudentdb.screens.CreateStudentFragment"
+        android:label="Добавление студента"
+        tools:layout="@layout/fragment_create_student">
+        <action
+            android:id="@+id/action_createStudentFragment_to_studentListFragment"
+            app:destination="@id/studentListFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/editGroupFragment"
+        android:name="vsu.cs.samsungstudentdb.screens.EditGroupFragment"
+        android:label="Редактирование группы"
+        tools:layout="@layout/fragment_edit_group">
+        <action
+            android:id="@+id/action_editGroupFragment_to_groupsListFragment"
+            app:destination="@id/groupsListFragment" />
+    </fragment>
+</navigation>

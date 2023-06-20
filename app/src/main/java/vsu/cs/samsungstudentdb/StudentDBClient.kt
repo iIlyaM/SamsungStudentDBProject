@@ -7,7 +7,8 @@ import retrofit2.converter.gson.GsonConverterFactory
 import java.util.concurrent.TimeUnit
 
 object StudentDBClient {
-    private const val BASE_URL = "http://192.168.1.199:8001/"
+    private const val BASE_URL = "https://app-iilyam.cloud.okteto.net/"
+//    private const val BASE_URL = "http://192.168.1.199:8001/"
     private val interceptor = HttpLoggingInterceptor().setLevel(HttpLoggingInterceptor.Level.BODY)
 
 

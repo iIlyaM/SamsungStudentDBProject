@@ -21,7 +21,7 @@ class StudentListAdapter(
     var context: Context,
     var students: List<StudentListDto>,
     val studentListener: OnStudentItemClickListener
-):
+) :
     RecyclerView.Adapter<StudentListAdapter.StudentViewHolder>() {
     inner class StudentViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val fullNameView: TextView
@@ -74,9 +74,14 @@ class StudentListAdapter(
     @SuppressLint("SetTextI18n")
     override fun onBindViewHolder(holder: StudentViewHolder, position: Int) {
         val student = students[position]
-        holder.fullNameView.text = "${student.second_name} ${student.first_name} ${student.third_name}"
+        holder.fullNameView.text =
+            "${student.second_name} ${student.first_name} ${student.third_name}"
         holder.facultyView.text = student.groupDto?.faculty_name
-        holder.groupNum.text = "Группа: ${student.groupDto?.group_number}"
+        if (student.groupDto?.group_number == null) {
+            holder.groupNum.text = "Группа: не распределён(а)"
+        } else {
+            holder.groupNum.text = "Группа: ${student.groupDto.group_number}"
+        }
         holder.birthdayView.text = "Д.р: ${student.birthday}"
     }
 }

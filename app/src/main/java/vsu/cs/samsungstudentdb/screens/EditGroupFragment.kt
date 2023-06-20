@@ -214,6 +214,7 @@ class EditGroupFragment : Fragment(), OnStudentItemClickListener {
                     Log.d("API Request successful", "Получили ${response.code()}")
                     showChosenItem("Студент удалён из группы")
                     getGroupsStudents(group_id)
+                    getStudents()
                 } else {
                     println("Не успешно")
                     showChosenItem("Ошибка! Студент не удалён из группы")
